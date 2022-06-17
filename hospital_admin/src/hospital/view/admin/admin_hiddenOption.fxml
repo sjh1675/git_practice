@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="350.0" maxWidth="400.0" minHeight="350.0" minWidth="400.0" prefHeight="350.0" prefWidth="400.0" stylesheets="/hospital/view/css/admin.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospital.controller.admin.data.Admin_hiddenOption">
+   <children>
+      <Button fx:id="hiddenOption_complete" layoutX="83.0" layoutY="273.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="적용">
+         <styleClass>
+         </styleClass></Button>
+      <TextField fx:id="option_ip_1" layoutX="65.0" layoutY="70.0" prefHeight="23.0" prefWidth="45.0" />
+      <TextField fx:id="option_ip_2" layoutX="115.0" layoutY="70.0" prefHeight="23.0" prefWidth="45.0" />
+      <TextField fx:id="option_ip_3" layoutX="165.0" layoutY="70.0" prefHeight="23.0" prefWidth="45.0" />
+      <TextField fx:id="option_ip_4" layoutX="215.0" layoutY="70.0" prefHeight="23.0" prefWidth="45.0" />
+      <Label layoutX="65.0" layoutY="46.0" text="데이터베이스 ip" />
+      <TextField fx:id="option_db_id" layoutX="65.0" layoutY="130.0" prefHeight="23.0" prefWidth="125.0" />
+      <Label layoutX="65.0" layoutY="108.0" text="DB ID" />
+      <Label layoutX="215.0" layoutY="108.0" text="DB Password" />
+      <TextField fx:id="option_db_password" layoutX="215.0" layoutY="130.0" prefHeight="23.0" prefWidth="125.0" />
+      <TextField fx:id="option_db_table" layoutX="65.0" layoutY="205.0" prefHeight="23.0" prefWidth="125.0" />
+      <Label layoutX="65.0" layoutY="183.0" text="Table name" />
+      <Label layoutX="287.0" layoutY="47.0" text="DB port" />
+      <TextField fx:id="option_port" layoutX="285.0" layoutY="71.0" prefHeight="23.0" prefWidth="63.0" />
+      <Button fx:id="hiddenOption_cancel" layoutX="215.0" layoutY="273.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="&#10;         " text="취소" />
+      <Button fx:id="hiddenOption_reset" layoutX="260.0" layoutY="199.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="&#10;         " text="초기화" />
+   </children>
+</AnchorPane>

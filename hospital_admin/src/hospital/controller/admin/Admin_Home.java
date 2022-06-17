@@ -5,6 +5,7 @@ import static hospital.view.admin.AdminLoaderFactory.ADMIN_INPATIENT_INFO;
 import static hospital.view.admin.AdminLoaderFactory.ADMIN_MAIN;
 import static hospital.view.admin.AdminLoaderFactory.ADMIN_RESERV_INFO;
 import static hospital.view.admin.AdminLoaderFactory.ADMIN_USER_INFO;
+import static hospital.view.admin.AdminLoaderFactory.ADMIN_HIDDEN;
 
 import java.net.InetAddress;
 import java.net.URL;
@@ -47,7 +48,7 @@ public class Admin_Home implements Initializable {
 	
 	@FXML private Pane viewWrap;
 	
-	private Pane userInfo, reservInfo, inpatientInfo, chat, main;
+	private Pane userInfo, reservInfo, inpatientInfo, chat, main, option;
 	public ServerHelper helper;
 	
 
@@ -95,6 +96,8 @@ public class Admin_Home implements Initializable {
 		main = ADMIN_MAIN.getScreen();
 		userInfo = ADMIN_USER_INFO.getScreen();
 		viewWrap.getChildren().add(main);
+		// 추가
+		option = ADMIN_HIDDEN.getScreen();
 	}
 	
 	private void setHandler() {
@@ -102,11 +105,16 @@ public class Admin_Home implements Initializable {
 		home_toUserInfo.setOnAction(e -> switchView(userInfo));
 		home_toReservInfo.setOnAction(e -> switchView(reservInfo));
 		home_toInpatientInfo.setOnAction(e -> switchView(inpatientInfo));
-		home_toAdminChat.setOnAction(e -> switchView(chat));
+		home_toAdminChat.setOnAction(e -> switchView(chat));		
 		home_exit.setOnAction(e -> {
 			helper.stopServer();
 			Platform.exit();
 			});
+
+		/*
+		 * @ 관리자님 안녕하세요 드래그 시 DB 정보 변경창으로 이동
+		 */
+		home_toAdmin.setOnMouseDragged(e -> switchView(option));
 	}
 
 }

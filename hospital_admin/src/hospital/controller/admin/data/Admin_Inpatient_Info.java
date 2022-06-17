@@ -5,17 +5,16 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import hospital.controller.admin.Admin_Home;
-import hospital.network.admin.ServerHelper;
 import hospital.view.admin.AdminLoaderFactory;
 import hospital.vo.InpatientVO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.Button;
 
 public class Admin_Inpatient_Info implements Initializable {
 

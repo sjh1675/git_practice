@@ -1,9 +1,11 @@
 package hospital.controller.util;
+import static hospital.view.admin.AdminLoaderFactory.ADMIN_HIDDEN;
 
 import java.time.LocalDate;
 import java.util.Optional;
 
 import hospital.controller.admin.Admin_Home;
+import hospital.view.admin.AdminLoaderFactory;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -25,6 +27,12 @@ public class Controllers {
 
 	private Controllers(){}
 	
+	public static void setView() {
+		AdminLoaderFactory[] list = { ADMIN_HIDDEN };
+		for (AdminLoaderFactory loader : list) {
+			loader.get().loadView();
+		}
+	}
 	/**
 	 * 화면 전환 시 이전 화면에 저장된 데이터를 모두 제거.
 	 * 

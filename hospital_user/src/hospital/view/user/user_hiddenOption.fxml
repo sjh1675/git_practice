@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="350.0" prefWidth="400.0" stylesheets="/hospital/view/css/client.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hospital.controller.user.data.User_hiddenOption">
+   <children>
+      <VBox alignment="CENTER" layoutX="57.0" layoutY="85.0" prefHeight="62.0" prefWidth="287.0" spacing="15.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="62.0" prefWidth="133.0" spacing="15.0">
+               <children>
+                  <Label styleClass="lblFont" text="Server port" />
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="359.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="option_port" prefHeight="23.0" prefWidth="100.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label styleClass="lblFont" text="Server IP" />
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="359.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="option_ip_1" prefHeight="23.0" prefWidth="45.0" />
+                  <TextField fx:id="option_ip_2" prefHeight="23.0" prefWidth="45.0" />
+                  <TextField fx:id="option_ip_3" prefHeight="23.0" prefWidth="45.0" />
+                  <TextField fx:id="option_ip_4" prefHeight="23.0" prefWidth="45.0" />
+                  <Button fx:id="option_change" prefHeight="38.0" prefWidth="44.0" text="변경">
+                     <styleClass>
+                        <String fx:value="pwChkBtn" />
+                        <String fx:value="btnFont" />
+                     </styleClass></Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

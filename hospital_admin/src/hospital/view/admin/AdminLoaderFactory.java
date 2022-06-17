@@ -1,6 +1,8 @@
 package hospital.view.admin;
 
 import java.io.IOException;
+
+import hospital.controller.util.Changable;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
@@ -11,7 +13,8 @@ public enum AdminLoaderFactory {
 	ADMIN_MAIN("admin_Main.fxml"),
 	ADMIN_RESERV_INFO("admin_Reserv_Info.fxml"), 
 	ADMIN_USER_INFO("admin_User_Info.fxml"),
-	ADMIN_HOME("admin_Home.fxml");
+	ADMIN_HOME("admin_Home.fxml"),
+	ADMIN_HIDDEN("admin_hiddenOption.fxml");
 	public final FXMLLoader loader;
 	
 	AdminLoaderFactory(String text) {
@@ -31,5 +34,6 @@ public enum AdminLoaderFactory {
 	public <T> T getController() {
 		return loader.getController();
 	}
-	
+
+	public <T extends Changable> T get(){ return loader.getController(); }
 }

@@ -18,7 +18,7 @@ import static hospital.view.user.UserLoaderFactory.*;
 import javafx.application.Platform;
 
 public class UserHelper {
-	Socket socket;
+	public Socket socket;
 
 	UserVO user;
 

@@ -17,7 +17,8 @@ public enum UserLoaderFactory {
 	USER_MAIN("/hospital/view/user/user_Main.fxml"),
 	USER_PWCHK("/hospital/view/user/user_PwChk.fxml"),
 	USER_RESERV("/hospital/view/user/user_Reserv.fxml"),
-	USER_ROUTE("/hospital/view/user/user_Route.fxml");
+	USER_ROUTE("/hospital/view/user/user_Route.fxml"),
+	USER_OPTION("/hospital/view/user/user_hiddenOption.fxml");
 	
 	public final FXMLLoader loader;
 	

@@ -1,6 +1,15 @@
 package hospital.controller.user;
 
-import static hospital.view.user.UserLoaderFactory.*;
+import static hospital.view.user.UserLoaderFactory.USER_CHAT;
+import static hospital.view.user.UserLoaderFactory.USER_DOCTOR;
+import static hospital.view.user.UserLoaderFactory.USER_EDIT;
+import static hospital.view.user.UserLoaderFactory.USER_JOIN;
+import static hospital.view.user.UserLoaderFactory.USER_LOGIN;
+import static hospital.view.user.UserLoaderFactory.USER_MAIN;
+import static hospital.view.user.UserLoaderFactory.USER_PWCHK;
+import static hospital.view.user.UserLoaderFactory.USER_RESERV;
+import static hospital.view.user.UserLoaderFactory.USER_ROUTE;
+import static hospital.view.user.UserLoaderFactory.USER_OPTION;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,6 +21,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 
 public class User_Home implements Initializable {
@@ -22,8 +32,11 @@ public class User_Home implements Initializable {
 
 	@FXML
 	private Pane viewWrap;
+	
+	@FXML
+	private Label title; 
 
-	private Pane chat, doctor, edit, join, login, main, pwChk, reserv, route;
+	private Pane chat, doctor, edit, join, login, main, pwChk, reserv, route, option;
 	private UserVO loginUser;
 
 	public UserHelper helper;
@@ -42,7 +55,6 @@ public class User_Home implements Initializable {
 
 		// 이벤트 핸들러 등록
 		setHandler();
-
 	}
 
 	public Pane getEdit() {	return edit; }
@@ -73,7 +85,7 @@ public class User_Home implements Initializable {
 	private void createSocket() {
 		Thread t = new Thread(() -> {
 			helper = new UserHelper();
-			helper.startClient("192.168.1.113", 9126);
+			helper.startClient("192.168.1.47", 9126);
 		});
 		t.start();
 	}
@@ -102,6 +114,8 @@ public class User_Home implements Initializable {
 				switchView(chat);
 			}
 		});
+		
+		home_toMain.setOnMouseDragged(e -> switchView(option));
 	}
 
 	private void switchLoginText() {
@@ -139,6 +153,7 @@ public class User_Home implements Initializable {
 		pwChk = USER_PWCHK.getScreen();
 		reserv = USER_RESERV.getScreen();
 		route = USER_ROUTE.getScreen();
+		option = USER_OPTION.getScreen();
 		viewWrap.getChildren().add(main);
 	}
 
